@@ -244,7 +244,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="mt-4 rounded-2xl bg-gradient-to-r from-white/20 via-white/5 to-white/20 p-px">
+          <div className="mt-4 rounded-2xl bg-linear-to-r from-white/20 via-white/5 to-white/20 p-px">
             <div className="flex flex-col gap-3 rounded-2xl bg-white/10 p-3 sm:flex-row sm:items-center">
               <input
                 type="text"
@@ -257,7 +257,7 @@ function App() {
               <button
                 type="button"
                 onClick={addTask}
-                className="rounded-xl bg-gradient-to-r from-sky-300 via-cyan-300 to-emerald-300 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+                className="rounded-xl bg-linear-to-r from-sky-300 via-cyan-300 to-emerald-300 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
               >
                 Add task
               </button>
@@ -322,7 +322,7 @@ function App() {
                       />
                     </div>
 
-                    <div className="space-y-3 min-h-[140px]">
+                    <div className="space-y-3 min-h-35">
                       {columnTasks.length === 0 ? (
                         <p className="text-slate-400 text-sm text-center py-8">
                           No tasks yet
@@ -477,7 +477,7 @@ function App() {
               </div>
               <div className="mt-5 h-2 w-full rounded-full bg-slate-100">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-slate-900 to-slate-700"
+                  className="h-full rounded-full bg-linear-to-r from-slate-900 to-slate-700"
                   style={{ width: `${progress}%` }}
                 />
               </div>
