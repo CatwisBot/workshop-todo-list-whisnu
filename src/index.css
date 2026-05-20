@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: dark;
@@ -14,88 +14,165 @@
 
 body {
   margin: 0;
-  font-family: 'Space Grotesk', 'Sora', sans-serif;
-  color: #e2e8f0;
-  background-color: #0b1020;
+  font-family: 'Inter', sans-serif;
+  color: #f8fafc;
+  background-color: #020617;
   background-image:
-    radial-gradient(1200px circle at 10% 10%, rgba(56, 189, 248, 0.25), transparent 60%),
-    radial-gradient(900px circle at 90% 0%, rgba(16, 185, 129, 0.2), transparent 55%),
-    radial-gradient(700px circle at 50% 100%, rgba(168, 85, 247, 0.25), transparent 60%);
+    radial-gradient(1200px circle at 15% 15%, rgba(56, 189, 248, 0.25), transparent 65%),
+    radial-gradient(1000px circle at 85% 15%, rgba(99, 102, 241, 0.22), transparent 55%),
+    radial-gradient(900px circle at 50% 85%, rgba(236, 72, 153, 0.15), transparent 60%);
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
 }
 
-body::before,
-body::after {
-  content: '';
+/* Elegant ambient floating glowing blobs in the background */
+.ambient-glow-1,
+.ambient-glow-2 {
   position: fixed;
-  width: 560px;
-  height: 560px;
-  border-radius: 999px;
-  filter: blur(10px);
-  opacity: 0.5;
+  width: 650px;
+  height: 650px;
+  border-radius: 9999px;
+  filter: blur(130px);
+  opacity: 0.65;
   pointer-events: none;
   z-index: 0;
-  mix-blend-mode: screen;
+  mix-blend-mode: plus-lighter;
 }
 
-body::before {
-  top: -160px;
-  left: -120px;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(56, 189, 248, 0.35),
-    transparent 60%
-  );
-  animation: float-a 18s ease-in-out infinite;
+.ambient-glow-1 {
+  top: -200px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(99, 102, 241, 0.15) 70%, transparent 100%);
+  animation: float-blob-1 25s ease-in-out infinite;
 }
 
-body::after {
-  bottom: -200px;
-  right: -160px;
-  background: radial-gradient(
-    circle at 60% 40%,
-    rgba(236, 72, 153, 0.3),
-    transparent 60%
-  );
-  animation: float-b 22s ease-in-out infinite;
+.ambient-glow-2 {
+  bottom: -250px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(139, 92, 246, 0.15) 70%, transparent 100%);
+  animation: float-blob-2 30s ease-in-out infinite;
 }
 
-#root {
-  min-height: 100svh;
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes float-a {
+@keyframes float-blob-1 {
   0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate(0px, 0px) scale(1);
   }
-  50% {
-    transform: translate3d(80px, 40px, 0) scale(1.05);
+  33% {
+    transform: translate(70px, -50px) scale(1.08);
+  }
+  66% {
+    transform: translate(-40px, 40px) scale(0.95);
   }
   100% {
-    transform: translate3d(10px, 90px, 0) scale(0.98);
+    transform: translate(0px, 0px) scale(1);
   }
 }
 
-@keyframes float-b {
+@keyframes float-blob-2 {
   0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate(0px, 0px) scale(1);
   }
-  50% {
-    transform: translate3d(-70px, -40px, 0) scale(1.04);
+  33% {
+    transform: translate(-60px, 50px) scale(0.92);
+  }
+  66% {
+    transform: translate(50px, -40px) scale(1.05);
   }
   100% {
-    transform: translate3d(-20px, -80px, 0) scale(0.97);
+    transform: translate(0px, 0px) scale(1);
   }
 }
 
+/* Premium Typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Standard Premium Glassmorphic Classes */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%), rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(15, 23, 42, 0.55);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.glass-input {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 
+    0 0 0 3px rgba(56, 189, 248, 0.25),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.10);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 
+    0 16px 36px 0 rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+/* Custom gorgeous scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Animations */
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -104,16 +181,77 @@ body::after {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.5s ease both;
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
+  .ambient-glow-1,
+  .ambient-glow-2 {
     animation: none;
   }
-
+  .glass-card:hover {
+    transform: none;
+  }
   .animate-fade-up {
     animation: none;
   }
 }
+
+/* Animated Rising Bubbles (Gelembung Udara Premium) */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Behind interactive cards but in front of background glow */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+.bubble {
+  position: absolute;
+  bottom: -30px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35) 0%, rgba(56, 189, 248, 0.12) 60%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 12px rgba(56, 189, 248, 0.15),
+    inset 0 0 6px rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  animation: float-up 14s linear infinite, sway 4s ease-in-out infinite;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-115vh) scale(0.85);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: var(--sway-distance, 25px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    animation: none;
+    display: none;
+  }
+}
+
