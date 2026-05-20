@@ -101,7 +101,7 @@ function App() {
               className="pointer-events-none absolute bottom-0 left-6 h-16 w-40 rounded-full bg-fuchsia-400/20 blur-2xl"
             />
             <div className="relative space-y-6">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-white/85">
                 <span className="rounded-full bg-white/20 px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
                   Glass
                 </span>
@@ -116,13 +116,13 @@ function App() {
                 <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                   Todo Board
                 </h1>
-                <p className="mt-3 text-white/70">
+                <p className="mt-3 text-white/85">
                   Raden Whisnu Arya Nugraha.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-3 shadow-sm">
-                  <div className="flex items-center justify-between text-xs text-white/60">
+                  <div className="flex items-center justify-between text-xs text-white/80">
                     <span>Todo</span>
                     <span>{todoShare}%</span>
                   </div>
@@ -137,7 +137,7 @@ function App() {
                   </div>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-3 shadow-sm">
-                  <div className="flex items-center justify-between text-xs text-white/60">
+                  <div className="flex items-center justify-between text-xs text-white/80">
                     <span>In Progress</span>
                     <span>{doingShare}%</span>
                   </div>
@@ -152,7 +152,7 @@ function App() {
                   </div>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-3 shadow-sm">
-                  <div className="flex items-center justify-between text-xs text-white/60">
+                  <div className="flex items-center justify-between text-xs text-white/80">
                     <span>Done</span>
                     <span>{doneShare}%</span>
                   </div>
@@ -172,16 +172,16 @@ function App() {
           <div className="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.8)] backdrop-blur-2xl animate-fade-up">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
                   Progress
                 </p>
                 <p className="mt-2 text-3xl font-semibold text-white">
                   {progress}%
                 </p>
-                <p className="mt-1 text-xs text-white/60">
+                <p className="mt-1 text-xs text-white/80">
                   Focus: {focusLabel}
                 </p>
-                <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-white/60">
+                <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-white/80">
                   <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1">
                     Active {activeCount}
                   </span>
@@ -205,19 +205,19 @@ function App() {
             </div>
             <div className="mt-5 grid grid-cols-3 gap-3 text-xs">
               <div className="rounded-xl border border-white/20 bg-white/10 px-3 py-2">
-                <p className="text-white/60">Todo</p>
+                <p className="text-white/80">Todo</p>
                 <p className="text-lg font-semibold text-white">
                   {todoCount}
                 </p>
               </div>
               <div className="rounded-xl border border-white/20 bg-white/10 px-3 py-2">
-                <p className="text-white/60">In Progress</p>
+                <p className="text-white/80">In Progress</p>
                 <p className="text-lg font-semibold text-white">
                   {doingCount}
                 </p>
               </div>
               <div className="rounded-xl border border-white/20 bg-white/10 px-3 py-2">
-                <p className="text-white/60">Done</p>
+                <p className="text-white/80">Done</p>
                 <p className="text-lg font-semibold text-white">
                   {doneCount}
                 </p>
@@ -231,11 +231,11 @@ function App() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-white">Quick Add</p>
-              <p className="text-xs text-white/60">
+              <p className="text-xs text-white/80">
                 Tekan Enter untuk tambah task lebih cepat.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-xs text-white/60">
+            <div className="flex items-center gap-2 text-xs text-white/80">
               <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1">
                 Default: Todo
               </span>
@@ -252,12 +252,12 @@ function App() {
                 onChange={(event) => setInputValue(event.target.value)}
                 onKeyDown={(event) => event.key === 'Enter' && addTask()}
                 placeholder="Tambah task baru..."
-                className="flex-1 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/50 shadow-sm outline-none transition focus:border-white/40 focus:ring-4 focus:ring-sky-400/30"
+                className="flex-1 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/70 shadow-sm outline-none transition focus:border-white/40 focus:ring-4 focus:ring-sky-400/30"
               />
               <button
                 type="button"
                 onClick={addTask}
-                className="rounded-xl bg-linear-to-r from-sky-300 via-cyan-300 to-emerald-300 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+                className="rounded-xl bg-slate-900/70 bg-linear-to-r from-sky-400 via-cyan-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_-18px_rgba(56,189,248,0.9)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-18px_rgba(56,189,248,0.95)] active:translate-y-0"
               >
                 Add task
               </button>
@@ -271,11 +271,11 @@ function App() {
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-white">Board</p>
-                <p className="text-xs text-white/60">
+                <p className="text-xs text-white/90">
                   Move tasks with the buttons.
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-xs text-white/60">
+              <div className="flex items-center gap-2 text-xs text-white/90">
                 <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1">
                   Glassmorphimnya kakak
                 </span>
@@ -302,15 +302,15 @@ function App() {
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2">
                         <span className={`h-2 w-2 rounded-full ${config.dot}`} />
-                        <h2 className="text-xs font-semibold uppercase tracking-wide text-white/70">
+                        <h2 className="text-xs font-semibold uppercase tracking-wide text-white/95">
                           {config.title}
                         </h2>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-white/60">
-                        <span className="rounded-full bg-white/15 px-2 py-1 text-xs text-white/70">
+                      <div className="flex items-center gap-2 text-xs text-white/90">
+                        <span className="rounded-full bg-white/25 px-2 py-1 text-xs text-white/95">
                           {columnTasks.length}
                         </span>
-                        <span className="text-[11px] text-white/50">
+                        <span className="text-[11px] text-white/85">
                           {columnShare}%
                         </span>
                       </div>
@@ -324,7 +324,7 @@ function App() {
 
                     <div className="space-y-3 min-h-35">
                       {columnTasks.length === 0 ? (
-                        <p className="text-white/40 text-sm text-center py-8">
+                        <p className="text-white/85 text-sm text-center py-8">
                           No tasks yet
                         </p>
                       ) : (
@@ -338,7 +338,7 @@ function App() {
                               className={`absolute left-0 top-0 h-full w-1 rounded-l-xl ${config.dot}`}
                             />
                             <div className="flex items-center justify-between gap-2 pl-2">
-                              <p className="text-sm text-white">
+                              <p className="text-sm text-white/95">
                                 {task.title}
                               </p>
                               <span
@@ -357,7 +357,7 @@ function App() {
                                       status === 'doing' ? 'todo' : 'doing'
                                     )
                                   }
-                                  className="rounded-lg border border-white/20 bg-white/10 px-2 py-1 text-xs text-white/70 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                                  className="rounded-lg border border-white/20 bg-white/15 px-2 py-1 text-xs text-white/95 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                                 >
                                   Back
                                 </button>
@@ -371,7 +371,7 @@ function App() {
                                       status === 'todo' ? 'doing' : 'done'
                                     )
                                   }
-                                  className="rounded-lg bg-linear-to-r from-sky-300 to-emerald-300 px-2 py-1 text-xs font-semibold text-slate-900 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                                  className="rounded-lg bg-linear-to-r from-sky-300 to-emerald-300 px-2 py-1 text-xs font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                                 >
                                   Next
                                 </button>
@@ -401,15 +401,15 @@ function App() {
                   <p className="text-sm font-semibold text-white">
                     Latest tasks
                   </p>
-                  <p className="text-xs text-white/60">Recent activity</p>
+                  <p className="text-xs text-white/80">Recent activity</p>
                 </div>
-                <span className="rounded-full bg-white/15 px-2 py-1 text-xs text-white/60">
+                <span className="rounded-full bg-white/20 px-2 py-1 text-xs text-white/80">
                   {latestTasks.length}
                 </span>
               </div>
               <div className="mt-4 space-y-3">
                 {latestTasks.length === 0 ? (
-                  <p className="text-sm text-white/50">No recent tasks.</p>
+                  <p className="text-sm text-white/70">No recent tasks.</p>
                 ) : (
                   latestTasks.map((task) => {
                     const config = columnConfig[task.status]
@@ -447,15 +447,15 @@ function App() {
                   <p className="text-sm font-semibold text-white">
                     Focus metrics
                   </p>
-                  <p className="text-xs text-white/60">
+                  <p className="text-xs text-white/80">
                     Keep your day balanced
                   </p>
                 </div>
-                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1 text-xs text-white/60">
+                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1 text-xs text-white/80">
                   {focusLabel}
                 </span>
               </div>
-              <div className="mt-4 space-y-3 text-sm text-white/70">
+              <div className="mt-4 space-y-3 text-sm text-white/85">
                 <div className="flex items-center justify-between">
                   <span>Active tasks</span>
                   <span className="font-semibold text-white">
