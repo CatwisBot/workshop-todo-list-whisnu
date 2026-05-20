@@ -373,7 +373,7 @@ function App() {
                 Todo Board Workspace
               </h1>
               <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-                Kelola produktivitas harian Anda dengan antarmuka kaca interaktif dan manajemen tugas dinamis.
+                Kelola produktivitas harian Anda.
               </p>
             </div>
           </div>
