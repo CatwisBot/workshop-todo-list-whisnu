@@ -363,7 +363,7 @@ function App() {
               <div className="flex flex-wrap items-center gap-2 text-xs">
                 <span className="flex items-center gap-1 rounded-full bg-sky-500/15 border border-sky-400/20 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-sky-300">
                   <Sparkles className="h-3 w-3 animate-spin-slow" />
-                  Premium Space Workspace
+                  Glassmorphirm Boss
                 </span>
                 <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-slate-300 text-[11px]">
                   Raden Whisnu Arya Nugraha
