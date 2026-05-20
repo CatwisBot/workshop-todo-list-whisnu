@@ -11,21 +11,21 @@ const columnConfig: Record<
 > = {
   todo: {
     title: 'Todo',
-    color: 'border-sky-200',
-    dot: 'bg-sky-400',
-    badge: 'bg-sky-100 text-sky-700',
+    color: 'border-sky-300/40',
+    dot: 'bg-sky-300',
+    badge: 'border border-sky-200/40 bg-sky-400/15 text-sky-100',
   },
   doing: {
     title: 'In Progress',
-    color: 'border-amber-200',
-    dot: 'bg-amber-400',
-    badge: 'bg-amber-100 text-amber-700',
+    color: 'border-amber-300/40',
+    dot: 'bg-amber-300',
+    badge: 'border border-amber-200/40 bg-amber-400/15 text-amber-100',
   },
   done: {
     title: 'Done',
-    color: 'border-emerald-200',
-    dot: 'bg-emerald-400',
-    badge: 'bg-emerald-100 text-emerald-700',
+    color: 'border-emerald-300/40',
+    dot: 'bg-emerald-300',
+    badge: 'border border-emerald-200/40 bg-emerald-400/15 text-emerald-100',
   },
 }
 
@@ -267,19 +267,19 @@ function App() {
 
         <section className="grid gap-6 lg:grid-cols-[1fr,320px]">
           {/* Board: 3 Columns */}
-          <div className="rounded-3xl border border-white/40 bg-white/80 p-5 text-slate-900 shadow-[0_30px_80px_-60px_rgba(15,23,42,0.55)] backdrop-blur-xl">
+          <div className="rounded-3xl border border-white/20 bg-white/10 p-5 shadow-[0_30px_80px_-60px_rgba(15,23,42,0.8)] backdrop-blur-2xl">
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
               <div>
-                <p className="text-sm font-semibold text-slate-800">Board</p>
-                <p className="text-xs text-slate-500">
+                <p className="text-sm font-semibold text-white">Board</p>
+                <p className="text-xs text-white/60">
                   Move tasks with the buttons.
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500">
-                <span className="rounded-full border border-slate-200 bg-white px-2 py-1">
-                  View: Kanban
+              <div className="flex items-center gap-2 text-xs text-white/60">
+                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1">
+                  Glassmorphimnya kakak
                 </span>
-                <span className="rounded-full border border-slate-200 bg-white px-2 py-1">
+                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1">
                   Total: {totalTasks}
                 </span>
               </div>
@@ -296,26 +296,26 @@ function App() {
                 return (
                   <div
                     key={status}
-                    className={`rounded-2xl border ${config.color} bg-white/90 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md animate-fade-up`}
+                    className={`rounded-2xl border ${config.color} bg-white/10 p-4 shadow-sm transition hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-md animate-fade-up`}
                     style={{ animationDelay: `${index * 90}ms` }}
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2">
                         <span className={`h-2 w-2 rounded-full ${config.dot}`} />
-                        <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-600">
+                        <h2 className="text-xs font-semibold uppercase tracking-wide text-white/70">
                           {config.title}
                         </h2>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-slate-500">
-                        <span className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600">
+                      <div className="flex items-center gap-2 text-xs text-white/60">
+                        <span className="rounded-full bg-white/15 px-2 py-1 text-xs text-white/70">
                           {columnTasks.length}
                         </span>
-                        <span className="text-[11px] text-slate-400">
+                        <span className="text-[11px] text-white/50">
                           {columnShare}%
                         </span>
                       </div>
                     </div>
-                    <div className="mb-4 h-1 w-full rounded-full bg-slate-100">
+                    <div className="mb-4 h-1 w-full rounded-full bg-white/10">
                       <div
                         className={`h-full rounded-full ${config.dot}`}
                         style={{ width: `${columnShare}%` }}
@@ -324,21 +324,21 @@ function App() {
 
                     <div className="space-y-3 min-h-35">
                       {columnTasks.length === 0 ? (
-                        <p className="text-slate-400 text-sm text-center py-8">
+                        <p className="text-white/40 text-sm text-center py-8">
                           No tasks yet
                         </p>
                       ) : (
                         columnTasks.map((task) => (
                           <div
                             key={task.id}
-                            className="group relative rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition hover:border-slate-300"
+                            className="group relative rounded-xl border border-white/20 bg-white/10 p-3 shadow-sm transition hover:border-white/40"
                           >
                             <span
                               aria-hidden="true"
                               className={`absolute left-0 top-0 h-full w-1 rounded-l-xl ${config.dot}`}
                             />
                             <div className="flex items-center justify-between gap-2 pl-2">
-                              <p className="text-sm text-slate-800">
+                              <p className="text-sm text-white">
                                 {task.title}
                               </p>
                               <span
@@ -357,7 +357,7 @@ function App() {
                                       status === 'doing' ? 'todo' : 'doing'
                                     )
                                   }
-                                  className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs text-slate-600 transition hover:border-slate-300 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
+                                  className="rounded-lg border border-white/20 bg-white/10 px-2 py-1 text-xs text-white/70 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                                 >
                                   Back
                                 </button>
@@ -371,7 +371,7 @@ function App() {
                                       status === 'todo' ? 'doing' : 'done'
                                     )
                                   }
-                                  className="rounded-lg bg-slate-900 px-2 py-1 text-xs font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
+                                  className="rounded-lg bg-linear-to-r from-sky-300 to-emerald-300 px-2 py-1 text-xs font-semibold text-slate-900 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                                 >
                                   Next
                                 </button>
@@ -379,7 +379,7 @@ function App() {
                               <button
                                 type="button"
                                 onClick={() => deleteTask(task.id)}
-                                className="ml-auto rounded-lg border border-rose-200 bg-rose-50 px-2 py-1 text-xs text-rose-600 transition hover:bg-rose-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-200"
+                                className="ml-auto rounded-lg border border-rose-200/40 bg-rose-400/20 px-2 py-1 text-xs text-rose-100 transition hover:bg-rose-400/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-200/40"
                               >
                                 Delete
                               </button>
@@ -395,21 +395,21 @@ function App() {
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-3xl border border-white/40 bg-white/80 p-4 text-slate-900 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.5)] backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-4 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.7)] backdrop-blur-2xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-semibold text-slate-800">
+                  <p className="text-sm font-semibold text-white">
                     Latest tasks
                   </p>
-                  <p className="text-xs text-slate-500">Recent activity</p>
+                  <p className="text-xs text-white/60">Recent activity</p>
                 </div>
-                <span className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-500">
+                <span className="rounded-full bg-white/15 px-2 py-1 text-xs text-white/60">
                   {latestTasks.length}
                 </span>
               </div>
               <div className="mt-4 space-y-3">
                 {latestTasks.length === 0 ? (
-                  <p className="text-sm text-slate-400">No recent tasks.</p>
+                  <p className="text-sm text-white/50">No recent tasks.</p>
                 ) : (
                   latestTasks.map((task) => {
                     const config = columnConfig[task.status]
@@ -417,7 +417,7 @@ function App() {
                     return (
                       <div
                         key={task.id}
-                        className="rounded-xl border border-slate-200 bg-white/90 px-3 py-2 shadow-[0_16px_30px_-24px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5"
+                        className="rounded-xl border border-white/20 bg-white/10 px-3 py-2 shadow-[0_16px_30px_-24px_rgba(15,23,42,0.45)] transition hover:-translate-y-0.5"
                       >
                         <div className="flex items-center justify-between gap-2">
                           <div className="flex items-center gap-2">
@@ -425,7 +425,7 @@ function App() {
                               aria-hidden="true"
                               className={`h-2 w-2 rounded-full ${config.dot}`}
                             />
-                            <p className="text-sm text-slate-700 truncate">
+                            <p className="text-sm text-white truncate">
                               {task.title}
                             </p>
                           </div>
@@ -441,43 +441,43 @@ function App() {
                 )}
               </div>
             </div>
-            <div className="rounded-3xl border border-white/40 bg-white/80 p-4 text-slate-900 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.5)] backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-4 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.7)] backdrop-blur-2xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-semibold text-slate-800">
+                  <p className="text-sm font-semibold text-white">
                     Focus metrics
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-white/60">
                     Keep your day balanced
                   </p>
                 </div>
-                <span className="rounded-full border border-slate-200 bg-white px-2 py-1 text-xs text-slate-500">
+                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-1 text-xs text-white/60">
                   {focusLabel}
                 </span>
               </div>
-              <div className="mt-4 space-y-3 text-sm text-slate-600">
+              <div className="mt-4 space-y-3 text-sm text-white/70">
                 <div className="flex items-center justify-between">
                   <span>Active tasks</span>
-                  <span className="font-semibold text-slate-900">
+                  <span className="font-semibold text-white">
                     {activeCount}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Completion</span>
-                  <span className="font-semibold text-slate-900">
+                  <span className="font-semibold text-white">
                     {progress}%
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Next milestone</span>
-                  <span className="font-semibold text-slate-900">
+                  <span className="font-semibold text-white">
                     {Math.min(100, progress + 10)}%
                   </span>
                 </div>
               </div>
-              <div className="mt-5 h-2 w-full rounded-full bg-slate-100">
+              <div className="mt-5 h-2 w-full rounded-full bg-white/10">
                 <div
-                  className="h-full rounded-full bg-linear-to-r from-slate-900 to-slate-700"
+                  className="h-full rounded-full bg-linear-to-r from-sky-300 to-emerald-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
