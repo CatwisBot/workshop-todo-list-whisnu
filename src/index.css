@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,15 +15,81 @@
 body {
   margin: 0;
   font-family: 'Space Grotesk', 'Sora', sans-serif;
-  color: #0f172a;
-  background:
-    radial-gradient(1200px circle at 0% 0%, #e2e8f0 0%, transparent 60%),
-    radial-gradient(900px circle at 100% 0%, #fde68a 0%, transparent 55%),
-    #f8fafc;
+  color: #e2e8f0;
+  background-color: #0b1020;
+  background-image:
+    radial-gradient(1200px circle at 10% 10%, rgba(56, 189, 248, 0.25), transparent 60%),
+    radial-gradient(900px circle at 90% 0%, rgba(16, 185, 129, 0.2), transparent 55%),
+    radial-gradient(700px circle at 50% 100%, rgba(168, 85, 247, 0.25), transparent 60%);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 560px;
+  height: 560px;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+body::before {
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(56, 189, 248, 0.35),
+    transparent 60%
+  );
+  animation: float-a 18s ease-in-out infinite;
+}
+
+body::after {
+  bottom: -200px;
+  right: -160px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(236, 72, 153, 0.3),
+    transparent 60%
+  );
+  animation: float-b 22s ease-in-out infinite;
 }
 
 #root {
   min-height: 100svh;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float-a {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(80px, 40px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(10px, 90px, 0) scale(0.98);
+  }
+}
+
+@keyframes float-b {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-70px, -40px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(-20px, -80px, 0) scale(0.97);
+  }
 }
 
 @keyframes fade-up {
@@ -42,6 +108,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+
   .animate-fade-up {
     animation: none;
   }
